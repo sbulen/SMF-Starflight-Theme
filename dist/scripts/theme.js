@@ -141,14 +141,15 @@ function generateColor() {
 
 function generateStars(amount)
 {
+	let long_dim = Math.max(ta_canvas.height, ta_canvas.width);
 	for (let i = 0; i < amount; i++)
 	{
 		starsArray[i] = new Star(
 			this.angle = Math.random() * Math.PI * 2,
-			this.dist = Math.random() * Math.max(ta_canvas.height, ta_canvas.width) / 2,
-			this.size = Math.random() * 3,
+			this.dist = Math.random() * long_dim / 2,
+			this.size = Math.ceil(1 - (this.dist / long_dim)) + 0.2,
 			this.color = generateColor(),
-			this.speed = Math.random() * 3 + 2
+			this.speed = Math.random() * Math.ceil(this.dist * 0.02 * (1 - (this.dist / long_dim)))
 		);
 	}
 }
@@ -175,13 +176,14 @@ function Star(angle, dist, size, color, speed)
 		ta_context.fill();
 
 		// Too far out, make another...
-		if (this.dist > Math.max(ta_canvas.height, ta_canvas.width) * .75)
+		let long_dim = Math.max(ta_canvas.height, ta_canvas.width);
+		if (this.dist > long_dim * .75)
 		{
 			this.angle = Math.random() * Math.PI * 2;
-			this.dist = Math.random() * Math.max(ta_canvas.height, ta_canvas.width) / 2;
-			this.size = Math.random() * 3;
+			this.dist = Math.random() * long_dim / 2;
+			this.size = Math.ceil(1 - (this.dist / long_dim)) + 0.2;
 			this.color = generateColor();
-			this.speed = Math.random() * 3 + 2;
+			this.speed = Math.random() * Math.ceil(this.dist * 0.02 * (1 - (this.dist / long_dim)));
 		}
 	};
 }
