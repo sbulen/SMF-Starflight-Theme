@@ -40,7 +40,7 @@
  */
 function template_init()
 {
-	global $settings, $txt, $context;
+	global $settings, $txt, $context, $smcFunc;
 
 	/* $context, $options and $txt may be available for use, but may not be fully populated yet. */
 
@@ -103,9 +103,22 @@ function template_init()
 		)
 	);
 
-	// If vars were never saved, then they don't exist in $settings yet...  Fix that...
-	// Kinda important or bad things happen right after install...
-	if (empty($settings['cc_background']))
+	// If vars were never saved, then they don't exist in $settings yet.  Fix that.
+	// Kinda important or bad things happen right after install.
+	// Need to actually check the Themes table, because sometimes CC defaults are inherited
+	// from the default theme - don't know if they're for this theme or not...
+	$request = $smcFunc['db_query']('', '
+		SELECT COUNT(*)
+		FROM {db_prefix}themes
+		WHERE id_theme = {int:id_theme}
+		AND variable LIKE {string:color_vars}',
+		array(
+			'id_theme' => $settings['theme_id'],
+			'color_vars' => 'cc_%'
+		)
+	);
+	list($color_count) = $smcFunc['db_fetch_row']($request);
+	if (empty($color_count))
 		foreach($settings['color_palettes']['default'] as $ix => $var)
 			$settings['cc_' . $ix] = $var;
 
