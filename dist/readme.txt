@@ -30,4 +30,5 @@ This theme is, in part, a demo.  Theme designers should feel free to borrow code
  - v1.4 Initial release
  - v1.5 Enhance flight physics
  - v1.6 Ensure proper defaults used on initial load
+ - v1.7 Color enhancements; more user control & fix some contrast issues
  

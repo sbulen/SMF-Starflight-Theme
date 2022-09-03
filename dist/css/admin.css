@@ -383,10 +383,10 @@ pre.file_content {
 	padding: 0 6px;
 }
 #manage_boards li#recycle_board {
-	background-color: #dee;
+	background-color: var(--cc_unapproved_topic);
 }
 #manage_boards li.redirect_board, #manage_boards li.redirect_board:hover {
-	background-color: #eed;
+	background-color: var(--cc_unapproved_topic);
 }
 .move_links {
 	padding: 0 13px 0 0;
@@ -420,7 +420,7 @@ dl.right dt {
 
 /* Styles for the manage membergroups section. */
 .denyboards_layout .board:hover {
-	background: #e3e9ec;
+	background: var(--cc_gradient_start);
 }
 .all_boards_in_cat {
 	margin-left: 2.5em;
@@ -484,7 +484,7 @@ span.search_weight {
 	border-top: 1px solid var(--cc_borders_color);
 }
 .perm_groups {
-	background-color: #fff;
+	background-color: var(--cc_gradient_end);
 }
 .perms {
 	width: 20px;
@@ -589,7 +589,7 @@ h3.config_hd {
 }
 
 .windowbg.highlight2 {
-	background: #d0e7f8;
+	background: var(--cc_gradient_start);
 }
 
 /* Css edit page */
