@@ -3550,8 +3550,8 @@ ul.post_options li {
 }
 #post_draft_options {
 	background: var(--cc_blocks_alternate_color);
-	border: 1px solid var(--cc_borders_color);
-	border-left: 1px solid var(--cc_borders_color);
+	border: 1px solid var(--cc_blocks_alternate_color);
+	border-left: 1px solid var(--cc_blocks_alternate_color);
 	border-top: none;
 	border-radius: 0 0 4px 4px;
 }
