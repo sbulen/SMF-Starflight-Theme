@@ -188,7 +188,7 @@ input[disabled], textarea[disabled], select[disabled], .button.disabled, .button
 hr {
 	border: none;
 	margin: 12px 0;
-	height: 2px;
+	height: 1px;
 	background: var(--cc_borders_color);
 	box-shadow: 0 1px 0 #bbb inset;
 }
