@@ -38,3 +38,4 @@ This theme is, in part, a demo.  Theme designers should feel free to borrow code
  - v1.12 2.1.5 & 2.1.6 updates; misc tweaks
  - v1.13 Minor fixes to contrast & checkbox alignment
  - v1.14 Minor cleanup
+ - v1.15 2.1.7 Updates
